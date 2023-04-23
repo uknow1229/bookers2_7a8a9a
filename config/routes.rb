@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "home/about"=>"homes#about"
 
   resources :messages, :only => [:create]
-
+  resources :rooms, :only => [:create,:show]
 
 
 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index,:show,:edit,:update] do
-    resources :rooms, :only => [:create,:show]
+    
 
     resource :relationships, only: [:create, :destroy]
     get 'followings' => 'relationships#followings', as: 'followings'
