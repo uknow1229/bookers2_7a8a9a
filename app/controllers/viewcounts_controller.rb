@@ -1,0 +1,2 @@
+class ViewcountsController < ApplicationController
+end
